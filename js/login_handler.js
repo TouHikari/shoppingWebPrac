@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
             try {
                 sessionStorage.setItem(CURRENT_USER_STORAGE_KEY, JSON.stringify(foundUser));
                 loginForm.reset();
-                setTimeout(() => { window.location.href = '../index.html'; }, 1500);
+                setTimeout(() => { window.location.href = '/index.html'; }, 1500);
             } catch (error) {
                 console.error("Failed to save current user to SessionStorage:", error);
                 displayMessage("登录状态保存失败，请稍后再试。", 'error', loginSuccessMessageDiv);
