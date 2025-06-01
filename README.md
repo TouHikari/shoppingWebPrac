@@ -50,16 +50,19 @@ shoppingWebPrac/
 
 ## 🚀 快速启动
 
-1.  **克隆仓库**：
+1.  **克隆仓库:**
     ```bash
     git clone https://github.com/TouHikari/shoppingWebPrac.git
     ```
-2.  **进入项目目录**：
-    ```bash
-    cd shoppingWebPrac
-    ```
-3.  **打开 `index.html`**：
-    直接在浏览器中打开 `index.html` 文件即可运行项目。
+2.  **打开文件:** 进入项目目录，在浏览器中直接打开 `index.html` 文件即可。
+
+    **注意:** 直接通过 `file://` 协议打开当前 `main` 分支下的 `html` 文件会出现问题，因为代码是根据 `http` 服务器进行适配的，**若需要在本地直接打开，请前往本仓库的 `localv` 分支，并阅读该分支的 `README.md` 文档**。
+    
+    **强烈建议使用一个简单的本地 Web 服务器来提供文件服务**，例如：
+    *   **VS Code Extension:** 安装并使用 "Live Server" 插件，右键点击 `index.html` 选择 "Open with Live Server"。
+    *   **Python:** 在项目根目录下打开终端，运行 `python -m http.server` (Python 3) 或 `python -m SimpleHTTPServer` (Python 2)，然后在浏览器中访问 `http://localhost:8000`。
+
+    **或者可以访问我在 Cloudflare Pages 上自动化部署的[对应域名](https://shoppingwebprac.pages.dev/)。**
 
 
 
