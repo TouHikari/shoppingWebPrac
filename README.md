@@ -21,29 +21,29 @@
 
 ```txt
 shoppingWebPrac/
-├── css/                  # 样式文件
-│   ├── canvas.css        # Canvas 粒子动画相关样式
-│   └── style.css         # 全局和主要页面样式
-├── htmls/                # HTML 页面文件
-│   ├── cart.html         # 购物车页面
-│   ├── login.html        # 登录页面
-│   ├── product.html      # 商品详情页面
-│   └── register.html     # 注册页面
-├── img/                  # 商品图片资源
+├── css/                    # 样式文件
+│   ├── canvas.css          # Canvas 粒子动画相关样式
+│   └── style.css           # 全局和主要页面样式
+├── htmls/                  # HTML 页面文件
+│   ├── cart.html           # 购物车页面
+│   ├── login.html          # 登录页面
+│   ├── product.html        # 商品详情页面
+│   └── register.html       # 注册页面
+├── img/                    # 商品图片资源
 │   ├── 优质运动鞋.jpg
 │   ├── 户外背包.jpg
 │   ├── 时尚T恤.jpg
 │   ├── 智能手表.jpg
 │   ├── 经典牛仔裤.jpg
 │   └── 舒适耳机.jpg
-├── js/                   # JavaScript 脚本文件
-│   ├── login_handler.js  # 登录逻辑处理
-│   ├── particle.js       # 粒子动画逻辑
+├── js/                     # JavaScript 脚本文件
+│   ├── login_handler.js    # 登录逻辑处理
+│   ├── particle.js         # 粒子动画逻辑
 │   ├── register_handler.js # 注册逻辑处理
-│   └── script.js         # 全局脚本 (商品数据、购物车、头部用户状态)
-├── LICENSE               # 项目许可证 (MIT License)
-├── README.md             # 项目说明文档
-└── index.html            # 网站首页
+│   └── script.js           # 全局脚本 (商品数据、购物车、头部用户状态)
+├── LICENSE                 # 项目许可证 (MIT License)
+├── README.md               # 项目说明文档
+└── index.html              # 网站首页
 ```
 
 
