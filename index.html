@@ -1,75 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TouHikariの小店 - 首页</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/canvas.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/canvas.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>TouHikariの小店</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="htmls/cart.html">购物车</a></li>
-                    <li><a href="htmls/login.html">登录</a></li>
-                    <li><a href="htmls/register.html">注册</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>TouHikariの小店</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="htmls/cart.html">购物车</a></li>
+            <li id="loginLinkItem"><a href="htmls/login.html">登录</a></li>
+            <li id="registerLinkItem">
+              <a href="htmls/register.html">注册</a>
+            </li>
+
+            <li id="loggedInUserInfo" style="display: none">
+              <span id="loggedInUsername"></span>
+              <button id="logoutButton">退出登录</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    
+
     <div class="container">
-        <h2>产品展示</h2>
-        <div class="homepage-products" id="productGrid">
-            <div class="product-card" data-id="1">
-                <img src="img/优质运动鞋.jpg" alt="产品1">
-                <h3>优质运动鞋</h3>
-                <p>￥299.00</p>
-                <button onclick="window.location.href='htmls/product.html?id=1'">查看详情</button>
-            </div>
-            <div class="product-card" data-id="2">
-                <img src="img/时尚T恤.jpg" alt="产品2">
-                <h3>时尚T恤</h3>
-                <p>￥99.00</p>
-                <button onclick="window.location.href='htmls/product.html?id=2'">查看详情</button>
-            </div>
-            <div class="product-card" data-id="3">
-                <img src="img/智能手表.jpg" alt="产品3">
-                <h3>智能手表</h3>
-                <p>￥899.00</p>
-                <button onclick="window.location.href='htmls/product.html?id=3'">查看详情</button>
-            </div>
-            <div class="product-card" data-id="4">
-                <img src="img/舒适耳机.jpg" alt="产品4">
-                <h3>舒适耳机</h3>
-                <p>￥150.00</p>
-                <button onclick="window.location.href='htmls/product.html?id=4'">查看详情</button>
-            </div>
-            <div class="product-card" data-id="5">
-                <img src="img/经典牛仔裤.jpg" alt="产品5">
-                <h3>经典牛仔裤</h3>
-                <p>￥180.00</p>
-                <button onclick="window.location.href='htmls/product.html?id=5'">查看详情</button>
-            </div>
-            <div class="product-card" data-id="6">
-                <img src="img/户外背包.jpg" alt="产品6">
-                <h3>户外背包</h3>
-                <p>￥220.00</p>
-                <button onclick="window.location.href='htmls/product.html?id=6'">查看详情</button>
-            </div>
+      <h2>产品展示</h2>
+      <div class="homepage-products" id="productGrid">
+        <div class="product-card" data-id="1">
+          <img src="img/优质运动鞋.jpg" alt="产品1" />
+          <h3>优质运动鞋</h3>
+          <p>￥299.00</p>
+          <button onclick="window.location.href='htmls/product.html?id=1'">
+            查看详情
+          </button>
         </div>
+        <div class="product-card" data-id="2">
+          <img src="img/时尚T恤.jpg" alt="产品2" />
+          <h3>时尚T恤</h3>
+          <p>￥99.00</p>
+          <button onclick="window.location.href='htmls/product.html?id=2'">
+            查看详情
+          </button>
+        </div>
+        <div class="product-card" data-id="3">
+          <img src="img/智能手表.jpg" alt="产品3" />
+          <h3>智能手表</h3>
+          <p>￥899.00</p>
+          <button onclick="window.location.href='htmls/product.html?id=3'">
+            查看详情
+          </button>
+        </div>
+        <div class="product-card" data-id="4">
+          <img src="img/舒适耳机.jpg" alt="产品4" />
+          <h3>舒适耳机</h3>
+          <p>￥150.00</p>
+          <button onclick="window.location.href='htmls/product.html?id=4'">
+            查看详情
+          </button>
+        </div>
+        <div class="product-card" data-id="5">
+          <img src="img/经典牛仔裤.jpg" alt="产品5" />
+          <h3>经典牛仔裤</h3>
+          <p>￥180.00</p>
+          <button onclick="window.location.href='htmls/product.html?id=5'">
+            查看详情
+          </button>
+        </div>
+        <div class="product-card" data-id="6">
+          <img src="img/户外背包.jpg" alt="产品6" />
+          <h3>户外背包</h3>
+          <p>￥220.00</p>
+          <button onclick="window.location.href='htmls/product.html?id=6'">
+            查看详情
+          </button>
+        </div>
+      </div>
     </div>
-    
+
     <footer>
-        <p><a href="https://github.com/TouHikari/shoppingWebPrac" style="color: white;">GitHub: TouHikari</a></p>
+      <p>
+        <a>GitHub: TouHikari</a>
+      </p>
     </footer>
-    
+
     <canvas id="particleCanvas"></canvas>
     <script src="js/script.js"></script>
     <script src="js/particle.js"></script>
-</body>
+  </body>
 </html>

@@ -1,55 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TouHikariの小店 - 购物车</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/canvas.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/canvas.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>TouHikariの小店</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../htmls/cart.html">购物车</a></li>
-                    <li><a href="../htmls/login.html">登录</a></li>
-                    <li><a href="../htmls/register.html">注册</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>TouHikariの小店</h1>
+        <nav>
+          <ul>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../htmls/cart.html">购物车</a></li>
+            <li id="loginLinkItem"><a href="../htmls/login.html">登录</a></li>
+            <li id="registerLinkItem">
+              <a href="../htmls/register.html">注册</a>
+            </li>
+
+            <li id="loggedInUserInfo" style="display: none">
+              <span id="loggedInUsername"></span>
+              <button id="logoutButton">退出登录</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    
+
     <div class="container">
-        <h2>购物车</h2>
-        <table class="cart-table" id="cartTable">
-            <thead>
-                <tr>
-                    <th>商品</th>
-                    <th>价格</th>
-                    <th>数量</th>
-                    <th>小计</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
-            <tbody id="cartItems">
-                <!-- 购物车商品将由 JS 动态加载 -->
-            </tbody>
-        </table>
-        <div class="cart-summary">
-            <p>总计: <span id="cartTotal">￥0.00</span></p>
-            <button class="checkout-btn">去结算</button>
-        </div>
+      <h2>购物车</h2>
+      <table class="cart-table" id="cartTable">
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>价格</th>
+            <th>数量</th>
+            <th>小计</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="cartItems">
+          <!-- 购物车商品将由 JS 动态加载 -->
+        </tbody>
+      </table>
+      <div class="cart-summary">
+        <p>总计: <span id="cartTotal">￥0.00</span></p>
+        <button class="checkout-btn">去结算</button>
+      </div>
     </div>
-    
+
     <footer>
-        <p><a href="https://github.com/TouHikari/shoppingWebPrac" style="color: white;">GitHub: TouHikari</a></p>
+      <p>
+        <a
+          href="https://github.com/TouHikari/shoppingWebPrac"
+          style="color: white"
+          >GitHub: TouHikari</a
+        >
+      </p>
     </footer>
-    
+
     <canvas id="particleCanvas"></canvas>
     <script src="../js/script.js"></script>
     <script src="../js/particle.js"></script>
-</body>
+  </body>
 </html>

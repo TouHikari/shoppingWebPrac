@@ -55,6 +55,59 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('shoppingCart', JSON.stringify(cart));
     }
 
+    const loginLinkItem = document.getElementById('loginLinkItem');
+    const registerLinkItem = document.getElementById('registerLinkItem');
+    const loggedInUserInfo = document.getElementById('loggedInUserInfo');
+    const loggedInUsernameSpan = document.getElementById('loggedInUsername');
+    const logoutButton = document.getElementById('logoutButton');
+
+    const CURRENT_USER_STORAGE_KEY = 'current_logged_in_user';
+
+    if (!loginLinkItem || !registerLinkItem || !loggedInUserInfo || !loggedInUsernameSpan || !logoutButton) {
+        console.warn("WARN: Header login/logout elements not found. Login status display might not work fully on this page.");
+        return;
+    }
+
+    function updateHeaderDisplay() {
+        const currentUserJSON = sessionStorage.getItem(CURRENT_USER_STORAGE_KEY);
+
+        if (currentUserJSON) {
+            try {
+                const currentUser = JSON.parse(currentUserJSON);
+                if (currentUser && currentUser.username) {
+                    loggedInUsernameSpan.textContent = `欢迎您, ${currentUser.username}`;
+                    loginLinkItem.style.display = 'none';
+                    registerLinkItem.style.display = 'none';
+                    loggedInUserInfo.style.display = 'flex';
+                } else {
+                    sessionStorage.removeItem(CURRENT_USER_STORAGE_KEY);
+                    updateHeaderDisplay();
+                }
+            } catch (e) {
+                console.error("Error parsing current user data from sessionStorage:", e);
+                sessionStorage.removeItem(CURRENT_USER_STORAGE_KEY);
+                updateHeaderDisplay();
+            }
+        } else {
+            loginLinkItem.style.display = 'list-item';
+            registerLinkItem.style.display = 'list-item';
+            loggedInUserInfo.style.display = 'none';
+        }
+    }
+
+    function handleLogout() {
+        sessionStorage.removeItem(CURRENT_USER_STORAGE_KEY);
+        updateHeaderDisplay();
+        alert("您已成功退出登录。");
+        if (currentPage !== 'index.html') {
+            window.location.href = '../index.html';
+        }
+    }
+
+    updateHeaderDisplay();
+
+    logoutButton.addEventListener('click', handleLogout);
+
     if (currentPage === 'product.html') {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = parseInt(urlParams.get('id'));
@@ -138,110 +191,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateCartDisplay();
-    }
-
-    if (currentPage === 'login.html') {
-        const loginForm = document.getElementById('loginForm');
-        const usernameInput = document.getElementById('loginUsername');
-        const passwordInput = document.getElementById('loginPassword');
-        const usernameError = document.getElementById('usernameError');
-        const passwordError = document.getElementById('passwordError');
-        const loginSuccessMessage = document.getElementById('loginSuccessMessage');
-
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let isValid = true;
-
-            usernameError.textContent = '';
-            passwordError.textContent = '';
-            loginSuccessMessage.textContent = '';
-
-            if (usernameInput.value.trim() === '') {
-                usernameError.textContent = '用户名不能为空。';
-                isValid = false;
-            }
-
-            if (passwordInput.value.trim() === '') {
-                passwordError.textContent = '密码不能为空。';
-                isValid = false;
-            }
-
-            if (isValid) {
-                // 模拟登录成功逻辑
-                loginSuccessMessage.textContent = '登录成功！即将跳转...';
-                
-                setTimeout(() => {
-                    window.location.href = 'index.html'; // 登录成功后跳转到首页
-                }, 1500);
-            }
-        });
-    }
-
-    if (currentPage === 'register.html') {
-        const registerForm = document.getElementById('registerForm');
-        const regUsernameInput = document.getElementById('regUsername');
-        const regEmailInput = document.getElementById('regEmail');
-        const regPasswordInput = document.getElementById('regPassword');
-        const confirmPasswordInput = document.getElementById('confirmPassword');
-
-        const regUsernameError = document.getElementById('regUsernameError');
-        const regEmailError = document.getElementById('regEmailError');
-        const regPasswordError = document.getElementById('regPasswordError');
-        const confirmPasswordError = document.getElementById('confirmPasswordError');
-        const registerSuccessMessage = document.getElementById('registerSuccessMessage');
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        registerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let isValid = true;
-
-            regUsernameError.textContent = '';
-            regEmailError.textContent = '';
-            regPasswordError.textContent = '';
-            confirmPasswordError.textContent = '';
-            registerSuccessMessage.textContent = '';
-
-            if (regUsernameInput.value.trim() === '') {
-                regUsernameError.textContent = '用户名不能为空。';
-                isValid = false;
-            } else if (regUsernameInput.value.trim().length < 3) {
-                regUsernameError.textContent = '用户名至少3个字符。';
-                isValid = false;
-            }
-
-            if (regEmailInput.value.trim() === '') {
-                regEmailError.textContent = '邮箱不能为空。';
-                isValid = false;
-            } else if (!emailRegex.test(regEmailInput.value.trim())) {
-                regEmailError.textContent = '请输入有效的邮箱地址。';
-                isValid = false;
-            }
-
-            if (regPasswordInput.value.trim() === '') {
-                regPasswordError.textContent = '密码不能为空。';
-                isValid = false;
-            } else if (regPasswordInput.value.trim().length < 6) {
-                regPasswordError.textContent = '密码至少6个字符。';
-                isValid = false;
-            }
-
-            if (confirmPasswordInput.value.trim() === '') {
-                confirmPasswordError.textContent = '请确认密码。';
-                isValid = false;
-            } else if (regPasswordInput.value !== confirmPasswordInput.value) {
-                confirmPasswordError.textContent = '两次输入的密码不一致。';
-                isValid = false;
-            }
-
-            if (isValid) {
-                // 模拟注册成功逻辑
-                registerSuccessMessage.textContent = '注册成功！即将跳转到登录页...';
-                
-                setTimeout(() => {
-                    window.location.href = 'login.html'; // 注册成功后跳转到登录页面
-                }, 1500);
-            }
-        });
     }
 });

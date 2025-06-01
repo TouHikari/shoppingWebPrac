@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TouHikariの小店 - 登录</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/canvas.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/canvas.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>TouHikariの小店</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../htmls/cart.html">购物车</a></li>
-                    <li><a href="../htmls/login.html">登录</a></li>
-                    <li><a href="../htmls/register.html">注册</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>TouHikariの小店</h1>
+        <nav>
+          <ul>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../htmls/cart.html">购物车</a></li>
+            <li id="loginLinkItem"><a href="../htmls/login.html">登录</a></li>
+            <li id="registerLinkItem">
+              <a href="../htmls/register.html">注册</a>
+            </li>
+
+            <li id="loggedInUserInfo" style="display: none">
+              <span id="loggedInUsername"></span>
+              <button id="logoutButton">退出登录</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    
+
     <div class="container">
-        <div class="auth-form-container">
-            <h2>登录</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="username">用户名/手机号/邮箱:</label>
-                    <input type="text" id="loginUsername" name="username" required>
-                    <span class="error-message" id="usernameError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="password">密码:</label>
-                    <input type="password" id="loginPassword" name="password" required>
-                    <span class="error-message" id="passwordError"></span>
-                </div>
-                <div class="form-group">
-                    <button type="submit">登录</button>
-                </div>
-                <div class="success-message" id="loginSuccessMessage"></div>
-            </form>
-        </div>
+      <div class="auth-form-container">
+        <h2>登录</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label id="username">用户名/手机号/邮箱:</label>
+            <input type="text" id="loginUsername" name="username" required />
+            <span class="error-message" id="usernameError"></span>
+          </div>
+          <div class="form-group">
+            <label id="password">密码:</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              required
+            />
+            <span class="error-message" id="passwordError"></span>
+          </div>
+          <div class="form-group">
+            <button type="submit">登录</button>
+          </div>
+          <div class="success-message" id="loginSuccessMessage"></div>
+        </form>
+      </div>
     </div>
-    
+
     <footer>
-        <p><a href="https://github.com/TouHikari/shoppingWebPrac" style="color: white;">GitHub: TouHikari</a></p>
+      <p>
+        <a
+          href="https://github.com/TouHikari/shoppingWebPrac"
+          style="color: white"
+          >GitHub: TouHikari</a
+        >
+      </p>
     </footer>
-    
+
     <canvas id="particleCanvas"></canvas>
     <script src="../js/script.js"></script>
+    <script src="../js/login_handler.js"></script>
     <script src="../js/particle.js"></script>
-</body>
+  </body>
 </html>

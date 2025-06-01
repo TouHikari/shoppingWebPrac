@@ -72,6 +72,10 @@ header ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
 }
 
 header li {
@@ -89,7 +93,7 @@ header a {
 }
 
 header a:hover {
-    color: var(--aws-medium-blue);
+    color: var(--aws-dark-orange);
 }
 
 footer {
@@ -99,6 +103,18 @@ footer {
     background-color: var(--aws-dark-blue);
     text-align: center;
     border-top: 4px solid var(--aws-medium-blue);
+}
+
+footer a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: white;
+    transition: color 0.2s ease-in-out;
+    
+}
+
+footer a:hover {
+    color: var(--aws-dark-orange);
 }
 
 h2 {
@@ -500,4 +516,32 @@ h2 {
         padding: 30px;
         margin: 30px auto;
     }
+}
+
+#loggedInUserInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#loggedInUserInfo span {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#logoutButton {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 3px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+#logoutButton:hover {
+    background-color: #c82333;
 }

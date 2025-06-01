@@ -1,66 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TouHikariの小店 - 注册</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/canvas.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/canvas.css" />
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <h1>TouHikariの小店</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../htmls/cart.html">购物车</a></li>
-                    <li><a href="../htmls/login.html">登录</a></li>
-                    <li><a href="../htmls/register.html">注册</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <h1>TouHikariの小店</h1>
+        <nav>
+          <ul>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../htmls/cart.html">购物车</a></li>
+            <li id="loginLinkItem"><a href="../htmls/login.html">登录</a></li>
+            <li id="registerLinkItem">
+              <a href="../htmls/register.html">注册</a>
+            </li>
+
+            <li id="loggedInUserInfo" style="display: none">
+              <span id="loggedInUsername"></span>
+              <button id="logoutButton">退出登录</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    
+
     <div class="container">
-        <div class="auth-form-container">
-            <h2>注册新用户</h2>
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="regUsername">用户名:</label>
-                    <input type="text" id="regUsername" name="username" required>
-                    <span class="error-message" id="regUsernameError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="regEmail">电子邮件:</label>
-                    <input type="email" id="regEmail" name="email" required>
-                    <span class="error-message" id="regEmailError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="regPassword">密码:</label>
-                    <input type="password" id="regPassword" name="password" required>
-                    <span class="error-message" id="regPasswordError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="confirmPassword">确认密码:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    <span class="error-message" id="confirmPasswordError"></span>
-                </div>
-                <div class="form-group">
-                    <button type="submit">注册</button>
-                </div>
-                <div class="success-message" id="registerSuccessMessage"></div>
-            </form>
-        </div>
+      <div class="auth-form-container">
+        <h2>注册新用户</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="regUsername">用户名:</label>
+            <input type="text" id="regUsername" name="username" required />
+            <span class="error-message" id="regUsernameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">电子邮件:</label>
+            <input type="email" id="regEmail" name="email" required />
+            <span class="error-message" id="regEmailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">密码:</label>
+            <input type="password" id="regPassword" name="password" required />
+            <span class="error-message" id="regPasswordError"></span>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">确认密码:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              required
+            />
+            <span class="error-message" id="confirmPasswordError"></span>
+          </div>
+          <div class="form-group">
+            <button type="submit">注册</button>
+          </div>
+          <div class="success-message" id="registerSuccessMessage"></div>
+        </form>
+      </div>
     </div>
-    
+
     <footer>
-        <p><a href="https://github.com/TouHikari/shoppingWebPrac" style="color: white;">GitHub: TouHikari</a></p>
-        <p style="color: red;">注：注册按钮需要能够写入浏览器本地数据，否则在其他页面可能不会正常显示！</p>
+      <p>
+        <a
+          href="https://github.com/TouHikari/shoppingWebPrac"
+          style="color: white"
+          >GitHub: TouHikari</a
+        >
+      </p>
+      <p style="color: red">
+        注：注册按钮需要能够写入浏览器本地数据，否则在其他页面可能不会正常显示！
+      </p>
     </footer>
-    
+
     <canvas id="particleCanvas"></canvas>
     <script src="../js/script.js"></script>
+    <script src="../js/register_handler.js"></script>
     <script src="../js/particle.js"></script>
-</body>
+  </body>
 </html>
