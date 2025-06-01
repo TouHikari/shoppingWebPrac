@@ -30,12 +30,12 @@ shoppingWebPrac/
 │   ├── product.html        # 商品详情页面
 │   └── register.html       # 注册页面
 ├── img/                    # 商品图片资源
-│   ├── 优质运动鞋.jpg
-│   ├── 户外背包.jpg
-│   ├── 时尚T恤.jpg
-│   ├── 智能手表.jpg
-│   ├── 经典牛仔裤.jpg
-│   └── 舒适耳机.jpg
+│   ├── 优质运动鞋.webp
+│   ├── 户外背包.webp
+│   ├── 时尚T恤.webp
+│   ├── 智能手表.webp
+│   ├── 经典牛仔裤.webp
+│   └── 舒适耳机.webp
 ├── js/                     # JavaScript 脚本文件
 │   ├── login_handler.js    # 登录逻辑处理
 │   ├── particle.js         # 粒子动画逻辑

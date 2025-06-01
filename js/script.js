@@ -6,42 +6,42 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             name: "优质运动鞋",
             price: 299.00,
-            image: "../img/优质运动鞋.jpg",
+            image: "../img/优质运动鞋.webp",
             description: "这款优质运动鞋采用最新的缓震技术和透气材料，提供卓越的穿着体验和支撑。适合跑步、健身及日常休闲穿搭。"
         },
         {
             id: 2,
             name: "时尚T恤",
             price: 99.00,
-            image: "../img/时尚T恤.jpg",
+            image: "../img/时尚T恤.webp",
             description: "纯棉制作的时尚T恤，手感柔软，穿着舒适。简约设计搭配多种颜色，轻松打造个性化造型。"
         },
         {
             id: 3,
             name: "智能手表",
             price: 899.00,
-            image: "../img/智能手表.jpg",
+            image: "../img/智能手表.webp",
             description: "多功能智能手表，具备心率监测、睡眠追踪、来电提醒和消息同步等功能。续航持久，是您健康生活的智能伙伴。"
         },
         {
             id: 4,
             name: "舒适耳机",
             price: 150.00,
-            image: "../img/舒适耳机.jpg",
+            image: "../img/舒适耳机.webp",
             description: "轻量化设计，佩戴舒适的头戴式耳机。音质清晰，低音强劲，带来沉浸式听觉体验。长时间佩戴不感疲劳。"
         },
         {
             id: 5,
             name: "经典牛仔裤",
             price: 180.00,
-            image: "../img/经典牛仔裤.jpg",
+            image: "../img/经典牛仔裤.webp",
             description: "采用优质丹宁布料，经典版型，时尚百搭。耐磨耐穿，经过特殊洗水工艺，手感柔软且穿着舒适。"
         },
         {
             id: 6,
             name: "户外背包",
             price: 220.00,
-            image: "../img/户外背包.jpg",
+            image: "../img/户外背包.webp",
             description: "防水耐磨的户外背包，多层收纳设计，容量大。适合徒步旅行、露营和日常通勤，为您提供便利。"
         }
     ];
